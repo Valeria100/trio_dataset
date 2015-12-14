@@ -1,0 +1,29 @@
+#!/bin/bash
+
+for i in `seq 1 9`;
+
+do
+
+perl detect_cnv.pl -trio -hmm lib/hh550.hmm -pfb lib/hh550.hg18.pfb -cnv /Volumes/Valeria/CRUK/FinalCodeCNVs/output_penncnv_files/trio/${i}_all.rawcnv /Volumes/Valeria/CRUK/FinalCodeCNVs/Input_penncnv_dnacopy/single/single1_9/Benign${i}.txt  /Volumes/Valeria/CRUK/FinalCodeCNVs/Input_penncnv_dnacopy/single/single1_9/Germline${i}.txt /Volumes/Valeria/CRUK/FinalCodeCNVs/Input_penncnv_dnacopy/single/single1_9/Tumour${i}.txt   -out /Volumes/Valeria/CRUK/FinalCodeCNVs/output_penncnv_files/trio/${i}_all.triocnv
+	
+done
+
+
+#######################
+
+
+#!/bin/bash
+
+for i in `seq 10 62`;
+
+do
+
+perl detect_cnv.pl -test -hmm lib/hh550.hmm -pfb lib/hh550.hg18.pfb /Volumes/Valeria/CRUK/FinalCodeCNVs/Input_penncnv_dnacopy/single/*${i}.txt -log /Volumes/Valeria/CRUK/FinalCodeCNVs/output_penncnv_files/trio/${i}_all.log –out /Volumes/Valeria/CRUK/FinalCodeCNVs/output_penncnv_files/trio/${i}_all.rawcnv
+	
+done
+
+
+
+
+
+

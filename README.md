@@ -16,3 +16,35 @@ To separate each file then run the script:
 FinalCodeCNVs/GenomeStudio_into_singlefiles.R 
 
 Now I am ready to analyse the data.
+
+#
+# final_code1.R
+#
+
+Pre-processing
+
+
+The file Arraystolookat.csv is a summary table, which includes the correspondences between patient samples and files, and the project.
+Each patient should have at least 3 samples: germline, benign and tumour, for CamCap or germline-tumour for ICGC and benign-tumour for CC. Or I can also have all three for CC and both for ICGC. In that case you can compare the tumour signal in CC with the one in CC and see if it is the same – check reliability.
+
+1- Discard NAs
+
+The samples all contains in both Logr and BAF some NAs. For a better analysis I discard all NAs and put the mean of the values around (window of 3) .
+
+2- Add 50 simulated data points
+
+Based on the paper: “Breaking the waves: improved detection of copy number variation form microarray-based comparative genomic hybridization”, I added 50 data points before at the beginning and at the end of each chromosome.
+
+3- LOESS
+
+Because the data are extremely noisy, I try to correct it using loess (cit). Tis technique simply interpolates the signal and return a smoother one.
+
+4- Eliminate the 50 simulated datapoints
+
+5-  Runmed – window=5
+
+At this point I have two options
+-	I calculate the ratio between Benign and Germline (LogBenign – LogGermline) and analyse thi new signal
+-	I leave the two signals separate and analyse them individually
+
+

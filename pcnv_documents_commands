@@ -1,0 +1,9 @@
+Cd Downloads
+Cd penncnv
+
+perl detect_cnv.pl -test -hmm lib/hh550.hmm -pfb lib/hh550.hg18.pfb ~/FinalCodeCNVs/Input_penncnv_dnacopy/BG*.txt -log ~/FinalCodeCNVs/output_penncnv_files/BGall.log –out ~/FinalCodeCNVs/output_penncnv_files/BGall.rawcnv
+
+
+perl detect_cnv.pl -test -hmm lib/hh550.hmm -pfb lib/hh550.hg18.pfb ~/FinalCodeCNVs/Input_penncnv_dnacopy/TG*.txt -log ~/FinalCodeCNVs/output_penncnv_files/TGall.log –out ~/FinalCodeCNVs/output_penncnv_files/TGall.rawcnv
+
+perl detect_cnv.pl -test -hmm lib/hh550.hmm -pfb lib/hh550.hg18.pfb ~/FinalCodeCNVs/Input_penncnv_dnacopy/TB*.txt -log ~/FinalCodeCNVs/output_penncnv_files/TBall.log –out ~/FinalCodeCNVs/output_penncnv_files/TBall.rawcnv
